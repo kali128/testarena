@@ -21,3 +21,7 @@ pip install pytest
 pip install selenium
 ```
 ##How to use
+```
+pytest tests
+```
+![img.png](img.png)
