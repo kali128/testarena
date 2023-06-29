@@ -11,9 +11,9 @@ def test_login_to_test_arena():
     title = 'TestArena'
     assert title == chrome_driver.title
 
-    login_detiles = chrome_driver.find_elements(By.CSS_SELECTOR, '.description')[0].text.split('\n')
-    login = str([i for i in login_detiles if i.startswith('Login: ')][0]).replace('Login: ', '')
-    password = str([i for i in login_detiles if i.startswith('Hasło:')][0]).replace('Hasło: ', '')
+    login_details = chrome_driver.find_element(By.CSS_SELECTOR, '.description').text.split('\n')
+    login = str([i for i in login_details if i.startswith('Login: ')][0]).replace('Login: ', '')
+    password = str([i for i in login_details if i.startswith('Hasło:')][0]).replace('Hasło: ', '')
 
     chrome_driver.find_elements(By.CSS_SELECTOR, '.btn.btn-fill.btn-primary')[0].click()
 
