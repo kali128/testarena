@@ -14,6 +14,6 @@ def test_login_to_test_arena():
     login = lp.LoginPage(driver)
     login.log_in(credentials['login'], 'invalid_password')
 
-    assert lp.get_error_message_text(driver) == t.Texts.LOGIN_ERROR_MESSAGE.value
+    assert login.get_error_message_text() == t.Texts.LOGIN_ERROR_MESSAGE.value
 
     wds.cleanup(driver)

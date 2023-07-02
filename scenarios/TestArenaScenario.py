@@ -8,5 +8,4 @@ def login_to_test_arena(driver):
     credentials = home.get_credentials()
     home.go_to_login_page()
     b.switch_to_last_tab(driver)
-    login = lp.LoginPage(driver)
-    login.log_in(credentials['login'], credentials['pass'])
+    lp.LoginPage(driver).log_in(credentials['login'], credentials['pass'])
