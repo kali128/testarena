@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.wait import WebDriverWait
 import os
 
 
@@ -9,6 +10,7 @@ def setup(url='http://testarena.pl/demo'):
     else:
         driver = webdriver.Chrome()
         driver.maximize_window()
+    driver.wait = WebDriverWait(driver, 3)
     driver.get(url)
     return driver
 

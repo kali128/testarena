@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.keys import Keys
 
@@ -16,7 +15,7 @@ class Locator(object):
 
 
 def wait_for_dropdown(driver):
-    wait = WebDriverWait(driver, 3)
+    wait = driver.wait
     wait.until(ec.presence_of_element_located((By.CLASS_NAME, Locator.dropdown_class)))
 
 

@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 
@@ -22,7 +21,7 @@ class AddAttachmentPage(object):
         self.driver.find_element(By.ID, Locator.create_directory_popup_button_id).click()
 
     def check_folder_exists(self, dir_name):
-        wait = WebDriverWait(self.driver, 3)
+        wait = self.driver.wait
         return wait.until(ec.text_to_be_present_in_element((By.CSS_SELECTOR, Locator.directory_list_css), dir_name))
 
     def find_element_in_table_by_text(self, text):
