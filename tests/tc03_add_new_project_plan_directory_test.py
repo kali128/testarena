@@ -18,6 +18,6 @@ def test_add_new_project_plan_directory():
 
     assert attachment.check_folder_exists(dir_name)
 
-    #TODO wywalić stworzony katalog
+    attachment.delete_folder_by_name(dir_name)
 
     wds.cleanup(driver)
